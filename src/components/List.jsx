@@ -11,6 +11,7 @@ function List() {
   const navigate = useNavigate();
 
   const todoStore = useSelector((state) => state.todos); //store 연결확인
+  const bStore = todoStore.filter((state) => state.isDone === false);
 
   // dispatch로 명령 전달
   const onDelete = (id) => {
@@ -24,26 +25,22 @@ function List() {
     <StListContainer>
       <h1>할일</h1>
       <StListBox>
-        {todoStore.map((todo) => {
-          if (todo.isDone === false) {
-            return (
-              <StTodoBox key={todo.id}>
-                <StDetailBtn onClick={() => navigate(`/detail/${todo.id}`)}>
-                  내용보기
-                </StDetailBtn>
-                <h1>{todo.title}</h1>
-                <p>{todo.body}</p>
-                <StBtnBox>
-                  <StBtn onClick={() => onDelete(todo.id)}>삭 제</StBtn>
-                  <StBtn onClick={() => onToggle(todo.id)}>
-                    {todo.isDone ? "취 소" : "완 료"}
-                  </StBtn>
-                </StBtnBox>
-              </StTodoBox>
-            );
-          } else {
-            return null;
-          }
+        {bStore.map((todo) => {
+          return (
+            <StTodoBox key={todo.id}>
+              <StDetailBtn onClick={() => navigate(`/detail/${todo.id}`)}>
+                내용보기
+              </StDetailBtn>
+              <h1>{todo.title}</h1>
+              <p>{todo.body}</p>
+              <StBtnBox>
+                <StBtn onClick={() => onDelete(todo.id)}>삭 제</StBtn>
+                <StBtn onClick={() => onToggle(todo.id)}>
+                  {todo.isDone ? "취 소" : "완 료"}
+                </StBtn>
+              </StBtnBox>
+            </StTodoBox>
+          );
         })}
       </StListBox>
 

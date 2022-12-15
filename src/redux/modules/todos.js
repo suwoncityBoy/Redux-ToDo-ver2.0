@@ -1,3 +1,5 @@
+import nextId from "react-id-generator";
+
 // Action value
 const ADD_TODO = "todos/ADD_TODO";
 const DELETE_TODO = "todos/DELETE_TODO";
@@ -32,12 +34,17 @@ export const updateTodo = (payload) => {
 // 초기값
 const initialState = [
   {
-    id: 1,
-    title: "공부열심히해서",
-    body: "멋진 개발자가 될거야!",
+    id: nextId(),
+    title: "될수있어",
+    body: "멋진 개발자!",
     isDone: false,
   },
-  { id: 2, title: "돈많이 벌어서", body: "소고기사먹어야지!.", isDone: false },
+  {
+    id: nextId(),
+    title: "돈많이 벌어서",
+    body: "소고기사먹어야지!.",
+    isDone: false,
+  },
 ];
 
 // Reducer: todos
@@ -58,11 +65,16 @@ const todos = (state = initialState, action) => {
       const updatedTodo = state.map((todo) => {
         if (todo.id === action.payload) {
           // id가 일치하는 곳에서
-          return { ...todo, isDone: !todo.isDone }; //isDone의 값을 반대로(false->true or true->false) 바꿔주는 로직 구현
+          return {
+            ...todo,
+            isDone: !todo.isDone,
+          }; //isDone의 값을 반대로(false->true or true->false) 바꿔주는 로직 구현
           // 마찬가지로 객체의 불변성을 지켜줘야 되니까 전개연산자(...)를 이용해 기존 내용을 복사해서 사용
         } else {
           // id가 일치하지 않는다면? 그냥 그대로...
-          return { ...todo };
+          return {
+            ...todo,
+          };
         }
       });
       return updatedTodo;

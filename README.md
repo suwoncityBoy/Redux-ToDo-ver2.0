@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# todolist 만들기 with Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Redux,react-router-dom,styled-components를 활용하여 간단한 todolist를 만들었습니다.
+<br />
+<br />
 
-## Available Scripts
+### **이미지 클릭시 링크로 이동!**
 
-In the project directory, you can run:
+[![image](./src/assets/thumb.PNG)](https://redux-to-do-ver2-0-jjjtpwbrq-suwoncityboy.vercel.app/ "todolist로이동")
+<br />
+<br />
 
-### `yarn start`
+# 폴더구조
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- src
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - assets
+  - components
+    - Form.jsx
+    - Header.jsx
+    - Layout.jsx
+    - List.jsx
+  - pages
+    - Details.jsx
+    - Home.jsx
+  - redux
+    - config
+      - configstore.js
+    - modules
+      - todos.js
+  - shared
+    - Router.jsx
+  - App.js
+  - index. js
 
-### `yarn test`
+  <br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# features : 구현 기능
 
-### `yarn build`
+- Create Todo : 투두 만들기
+- Read Todos, Todo : 투두 목록, 상세페이지 읽기
+- Update Todo : 투두 업데이트(완료, 취소)
+- Delete Todo : 투두 삭제
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 느낀점
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- redux를 통해서 전역으로 상태를 관리를 해서 기존 리액트로만 했을때의 문제점인 `props drilling`을 해결할 수 있어서 좋았다.
+- 이번프로젝트를 통해서 useState()훅 사용보다 redux로 state를 관리하는게 훨씬 편하다는것을 느꼈다.
+- map메서드 사용할때 key 넣는 것을 생활화 하자.
+- console.log를 통해서 코드의 흐름을 잘 파악하자.
