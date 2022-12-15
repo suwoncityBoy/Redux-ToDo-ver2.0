@@ -6,7 +6,7 @@ Redux,react-router-dom,styled-components를 활용하여 간단한 todolist를 �
 
 ### **이미지 클릭시 링크로 이동!**
 
-[![image](./src/assets/thumb.PNG)](https://redux-to-do-ver2-0-jjjtpwbrq-suwoncityboy.vercel.app/ "todolist로이동")
+[![image](./src/assets/thumb.PNG)](https://redux-to-do-ver2-0-8rdb6csad-suwoncityboy.vercel.app/ "todolist로이동")
 <br />
 <br />
 
